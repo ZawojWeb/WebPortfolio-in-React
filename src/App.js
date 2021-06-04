@@ -1,21 +1,14 @@
+import React from 'react'
+// Global Stlye
+import GlobalStyle from './components/GlobalStyle'
+import AboutUsPage from './pages/AboutUsPage'
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle></GlobalStyle>
+      <AboutUsPage></AboutUsPage>
     </div>
   );
 }
