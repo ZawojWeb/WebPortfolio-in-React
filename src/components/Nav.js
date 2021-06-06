@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const Nav = () => {
     return(
         <SNav>
-            <h1 id="logo"><a href="#">Portfolio Demo</a></h1>
+            <h1 id="logo"><Link to="/">Portfolio Demo</Link></h1>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Work</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><Link to="/">About Us</Link></li>
+                <li><Link to="/work">Our Work</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
         </SNav>
     )
