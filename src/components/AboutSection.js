@@ -1,6 +1,6 @@
 import React from 'react';
-import home1 from "../img/home1.png"
-import styled from 'styled-components'
+import home1 from "../img/home1.png";
+import {SAbout,SDesc,SImage,SHideDiv} from '../styles'
 const AboutSection = () => {
     return(
         <SAbout>
@@ -28,36 +28,7 @@ const AboutSection = () => {
 
 // Styled components
 
-const SAbout = styled.section`
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem;
-    color: white;
-`
 
-const SDesc = styled.div`
-    flex: 1;
-    padding-right: 5rem;
-    h2{
-        font-weight: lighter;
-    }
-`
-
-const SImage= styled.div`
-    flex: 1;
-    overflow: hidden;
-    img{
-        width: 100%;
-        height: 80vh;
-        object-fit: cover;
-    }
-`
-
-const SHideDiv = styled.div`
-    overflow: hidden;
-`
 
 
 export default AboutSection

@@ -6,55 +6,80 @@ import money from '../img/money.svg'
 import teamwork from '../img/teamwork.svg'
 import home2 from '../img/home2.png'
 
+import {SAbout,SDesc,SImage} from '../styles'
+import styled from 'styled-components';
+
 const ServicesSection = () => {
     return(
-        <section className="ServicesSection">
-            <div className="description">
+        <SServices>
+            <SDesc>
                 <header>
                     <h2>High <span>quality</span> services</h2>
-                    <div className="cards">
-                        <div className="card">
+                    <SCards >
+                        <SCard>
                             <div className="icon">
                                 <img src={clock} alt="clock icon" />
                                 <h3>Effictien</h3>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, at?</p>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="card">
+                        </SCard>
+
+                        <SCard>
                             <div className="icon">
                                 <img src={diaphragm} alt="diaphragm icon" />
                                 <h3>Effictien</h3>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, at?</p>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="card">
+                        </SCard>
+                        <SCard>
                             <div className="icon">
                                 <img src={money} alt="money icon" />
                                 <h3>Effictien</h3>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, at?</p>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="card">
+                        </SCard>
+                        <SCard>
                             <div className="icon">
                                 <img src={teamwork} alt="teamwork icon" />
                                 <h3>Effictien</h3>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, at?</p>
-                        </div>
-                    </div>
+                        </SCard>
+                    </SCards>
                 </header>
-            </div>
-            <div className="image">
+            </SDesc>
+            <SImage>
                 <img src={home2} alt="" />
-            </div>
-        </section>
+            </SImage>
+        </SServices>
     )
 }
 
+const SServices = styled(SAbout)`
+    h2{
+        padding-bottom: 5rem;
+    }
+    p{
+        width: 70%;
+        padding:2rem 0rem 4rem 0rem;
+    }
+`
+
+const SCards = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`
+const SCard = styled.div`
+    flex-basis: 17rem;
+    .icon{
+        display: flex;
+        align-items: center;
+    }
+    h3{
+        margin-left: 1rem;
+        background: white;
+        color: black;
+        padding: 1rem;
+    }
+`
 export default ServicesSection
