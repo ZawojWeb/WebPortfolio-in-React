@@ -1,21 +1,26 @@
 import React from 'react';
 import home1 from "../img/home1.png";
 import {SAbout,SDesc,SImage,SHideDiv} from '../styles'
+
+// Framer Motion
+import {motion} from 'framer-motion'
 const AboutSection = () => {
+
+
     return(
         <SAbout>
             <SDesc>
-                <header>
+                <motion.header>
                     <SHideDiv>
-                        <h2>We Work to make</h2>
+                        <motion.h2>We Work to make</motion.h2>
                     </SHideDiv>
                     <SHideDiv>
-                        <h2>Your <span>dreams</span></h2>
+                        <motion.h2>Your <span>dreams</span></motion.h2>
                     </SHideDiv>
                     <SHideDiv>
-                        <h2>come true.</h2>
+                        <motion.h2>come true.</motion.h2>
                     </SHideDiv>
-                </header>
+                </motion.header>
                 <p>Contact us for any photography or video ideas taht you have. We have professional with amazing skills.</p>
                 <button>Contact Us</button>
             </SDesc>
@@ -26,7 +31,6 @@ const AboutSection = () => {
     );
 }
 
-// Styled components
 
 
 

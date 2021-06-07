@@ -7,6 +7,7 @@ export const SAbout = styled.section`
     justify-content: space-between;
     padding: 5rem;
     color: white;
+    
 `
 export const SDesc = styled.div`
     flex: 2;
