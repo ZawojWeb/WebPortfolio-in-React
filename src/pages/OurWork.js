@@ -1,23 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // Img
 import athleteSmall from '../img/athlete-small.png'
 import theracerSmall from '../img/theracer-small.png'
 import goodtimesSmall from '../img/goodtimes-small.png'
 // Aniamtion
-import {motion} from 'framer-motion'
-import {sliderContainer,
+import { motion } from 'framer-motion'
+import {
+    sliderContainer,
     slider,
     pageAnimation,
     fade,
     photoAnim,
-    lineAnim,} from '../animation'
-import {useScroll} from '../components/useScroll'
+    lineAnim,
+} from '../animation'
+import { useScroll } from '../components/useScroll'
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
-    const [element1,controls1] = useScroll();
-    const [element2,controls2] = useScroll();
+    const [element1, controls1] = useScroll();
+    const [element2, controls2] = useScroll();
     return (
         <SWork exit="exit" variants={pageAnimation} initial="hidden" animate="show"  >
             <motion.div variants={sliderContainer}>
@@ -30,18 +33,19 @@ const OurWork = () => {
                 <motion.h2 variants={fade}>The Athlete</motion.h2>
                 <motion.div variants={lineAnim} className="line"></motion.div>
                 <SHidden>
-                <Link to="/work/the-athlete"><motion.img variants={photoAnim} src={athleteSmall} alt="Image of Athlete"/></Link></SHidden>
+                    <Link to="/work/the-athlete"><motion.img variants={photoAnim} src={athleteSmall} alt="The Athlete" /></Link></SHidden>
             </SMovie>
             <SMovie ref={element1} variants={fade} animate={controls1} initial="hidden">
                 <h2>The Theracer</h2>
                 <motion.div variants={lineAnim} className="line"></motion.div>
-                <Link to="/work/the-racer"><img src={theracerSmall} alt="Image of Theracer"/></Link>
+                <Link to="/work/the-racer"><img src={theracerSmall} alt="The Theracer" /></Link>
             </SMovie>
             <SMovie ref={element2} variants={fade} animate={controls2} initial="hidden">
                 <h2>Good Times</h2>
-                <motion.div variants={lineAnim}className="line"></motion.div>
-                <Link to="/work/good-times"><img src={goodtimesSmall} alt="Image Good Times"/></Link>
+                <motion.div variants={lineAnim} className="line"></motion.div>
+                <Link to="/work/good-times"><img src={goodtimesSmall} alt="The Times" /></Link>
             </SMovie>
+            <ScrollTop></ScrollTop>
         </SWork>
     )
 }
@@ -54,6 +58,9 @@ const SWork = styled(motion.div)`
     h2{
         color: white;
         padding: 1rem 0rem;
+    }
+    @media (max-width:1300px){
+     padding: 2rem;
     }
 `
 
@@ -83,7 +90,7 @@ const Frame1 = styled(motion.div)`
     width: 100%;
     height: 100vh;
     background:#fffebf ;
-    z-index: 10;
+    z-index: 200;
 `
 const Frame2 = styled(Frame1)`
     background:#ff8efb ;

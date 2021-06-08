@@ -6,16 +6,16 @@ import money from '../img/money.svg'
 import teamwork from '../img/teamwork.svg'
 import home2 from '../img/home2.png'
 
-import {SAbout,SDesc,SImage} from '../styles'
+import { SAbout, SDesc, SImage } from '../styles'
 import styled from 'styled-components';
 
-import {fade} from '../animation';
-import {useScroll} from './useScroll'
+import { fade } from '../animation';
+import { useScroll } from './useScroll'
 
 
 const ServicesSection = () => {
-   const [element, controls] = useScroll();
-    return(
+    const [element, controls] = useScroll();
+    return (
         <SServices variants={fade} animate={controls} initial="hidden" ref={element}>
             <SDesc>
                 <header>
@@ -68,11 +68,15 @@ const SServices = styled(SAbout)`
         width: 70%;
         padding:2rem 0rem 4rem 0rem;
     }
+    
 `
 
 const SCards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media (max-width:1300px){
+        justify-content: center;
+    }
 `
 const SCard = styled.div`
     flex-basis: 17rem;

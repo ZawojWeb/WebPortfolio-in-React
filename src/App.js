@@ -7,18 +7,17 @@ import AboutUsPage from './pages/AboutUsPage'
 import ContactUs from './pages/ContactUs'
 import OurWork from './pages/OurWork'
 // Router
-import {Switch,Route, useLocation} from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import MovieDetali from './pages/MovieDetali'
 // Animation
-import {AnimatePresence} from 'framer-motion'
-import styled from 'styled-components'
+import { AnimatePresence } from 'framer-motion'
 
 
 function App() {
   const location = useLocation();
   return (
     <main>
-      <SDivApp className="App" >
+      <div className="App" >
         <GlobalStyle></GlobalStyle>
         <Nav></Nav>
         <AnimatePresence exitBeforeEnter>
@@ -33,15 +32,13 @@ function App() {
               <MovieDetali></MovieDetali>
             </Route>
             <Route path="/contact" exact>
-            <ContactUs></ContactUs>
+              <ContactUs></ContactUs>
             </Route>
           </Switch>
         </AnimatePresence>
-      </SDivApp>
+      </div>
     </main>
   );
 }
-const SDivApp = styled.div`
-  overflow: hidden;
-`
+
 export default App;

@@ -5,6 +5,7 @@ import FAQ from '../components/FAQ'
 // Animation 
 import {motion} from 'framer-motion'
 import {pageAnimation} from '../animation'
+import ScrollTop from '../components/ScrollTop';
 
 const AboutUsPage = () => {
     return(
@@ -12,6 +13,7 @@ const AboutUsPage = () => {
             <AboutSection></AboutSection>
             <ServicesSection></ServicesSection>
             <FAQ></FAQ>
+            <ScrollTop></ScrollTop>
         </motion.div>
     )
 }
