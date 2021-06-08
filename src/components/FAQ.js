@@ -1,48 +1,47 @@
-import React from 'react';  
+import React, {useState} from 'react';  
 import styled from 'styled-components'
-import {SAbout} from '../styles'
+import {SAbout} from '../styles';
+import Toggle from './Toggle'
+import {AnimateSharedLayout} from 'framer-motion';
+import {useScroll} from './useScroll'
+import {scrollReveal} from '../animation'
+
 const FAQ = () => {
+    const [element, controls] = useScroll();
     return(
-        <SFaq>
+        <SFaq variants={scrollReveal} ref={element} animate={controls} initial="hidden">
             <h2>Any Questions <span>FAQ</span></h2>
-            <div className="question">
-                <h4>How Do I Start</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>How Do I WORK</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>How pay</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What products do you offer</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+            <AnimateSharedLayout>
+                <Toggle title="How Do I Start">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
+                        </div>
+                </Toggle>
+                <Toggle title="How Do I WORK">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
+                        </div>
+                </Toggle>
+                <Toggle title="How pay">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
+                        </div>
+                </Toggle>
+                <Toggle title="What products do you offer">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, similique.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam modi ex repellendus molestias? Id ea laboriosam maxime magni deleniti?</p>
+                        </div>
+                </Toggle>
+            </AnimateSharedLayout>
         </SFaq>
     )
 }
 const SFaq = styled(SAbout)`
     display: block;
-
     span{
         display: block;
     

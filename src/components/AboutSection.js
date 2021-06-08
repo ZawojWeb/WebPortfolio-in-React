@@ -4,6 +4,7 @@ import {SAbout,SDesc,SImage,SHideDiv} from '../styles'
 // Framer Motion
 import {motion} from 'framer-motion'
 import {titleAnim, fade, photoAnim} from '../animation'
+import Wave from './Wave'
 const AboutSection = () => {
     return(
         <SAbout>
@@ -25,6 +26,7 @@ const AboutSection = () => {
             <SImage>
                 <motion.img variants={photoAnim} src={home1} alt="guy with camera" />
             </SImage>
+            <Wave/>
         </SAbout>
     );
 }
