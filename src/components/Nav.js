@@ -8,11 +8,11 @@ const Nav = () => {
     const { pathname } = useLocation();
     return (
         <SNav>
-            <h1 id="logo"><Link to="/">Portfolio Demo</Link></h1>
+            <h1 id="logo"><Link to="/index.html">Portfolio Demo</Link></h1>
             <ul>
                 <li>
-                    <Link to="/">About Us</Link>
-                    <SLine transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === "/" ? "50%" : "0%" }} />
+                    <Link to="/index.html">About Us</Link>
+                    <SLine transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === "/index.html" ? "50%" : "0%" }} />
                 </li>
                 <li><Link to="/work">Our Work</Link > <SLine transition={{ duration: 0.75 }}
                     initial={{ width: "0%" }}
