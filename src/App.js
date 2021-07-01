@@ -22,7 +22,7 @@ function App() {
         <Nav></Nav>
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname} >
-            <Route path="/index.html" exact>
+            <Route path="/" exact>
               <AboutUsPage></AboutUsPage>
             </Route>
             <Route path="/work" exact>

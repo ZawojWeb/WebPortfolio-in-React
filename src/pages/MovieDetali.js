@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { pageAnimation } from '../animation'
 const MovieDetali = () => {
     const history = useHistory();
-    console.log(history);
     const url = history.location.pathname;
     // State
     const [Movies, setMovies] = useState(MovieState);
@@ -23,7 +22,8 @@ const MovieDetali = () => {
                 <SDetails variants={pageAnimation} initial="hidden" animate="show" exit="exit" >
                     <SHeadLine>
                         <h2>{Movie.title}</h2>
-                        <img src={Movie.mainImg} alt="" />
+                        {console.log(Movie.mainImg)}
+                        <img src="./static/media/athlete-small.9c7a85d4.png" alt="" />
                     </SHeadLine>
                     <SAwards>
                         {Movie.awards.map((award) => (
