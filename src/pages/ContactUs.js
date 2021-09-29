@@ -9,31 +9,6 @@ import ScrollTop from '../components/ScrollTop';
 const ContactUs = () => {
     const [SendN, setSendN] = useState(false)
     const ControlSendN = useAnimation();
-    const SendNudeAnim = {
-        hidden: {
-            right: "8%",
-            y: 200,
-            opacity: 0,
-        },
-        show: {
-            right: "10%",
-            y: 0,
-            opacity: 1,
-            transition: {
-                ease: "easeOut",
-                duration: 1
-            }
-        },
-        exit: {
-            opacity: 0,
-            y: 200,
-            transition: {
-                ease: "easeOut",
-
-            },
-        }
-
-    }
     const SendMessegaAnim = {
         hidden: {
             right: "10%",
@@ -80,7 +55,6 @@ const ContactUs = () => {
                         <SCricle></SCricle>
                         <SH2 onHoverStart={() => setSendN(true)} onHoverEnd={() => setSendN(false)}>
                             Sund Us A <motion.span variants={SendMessegaAnim} initial="hidden" animate={ControlSendN} >Message</motion.span>
-                            <Nudes variants={SendNudeAnim} initial="hidden" animate={ControlSendN} >Nudes</Nudes>
                         </SH2>
                     </SSocial>
                 </SHide>
