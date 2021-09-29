@@ -7,8 +7,6 @@ import styled from 'styled-components'
 import ScrollTop from '../components/ScrollTop';
 
 const ContactUs = () => {
-    const [SendN, setSendN] = useState(false)
-    const ControlSendN = useAnimation();
     const SendMessegaAnim = {
         hidden: {
             right: "10%",
@@ -35,11 +33,7 @@ const ContactUs = () => {
         }
 
     }
-    if (SendN) {
-        ControlSendN.start("show")
-    } else {
-        ControlSendN.start("hidden")
-    }
+   
     return (
         <SCotactStyle variants={pageAnimation} initial="hidden" animate="show" exit="exit" >
             <STitle>
@@ -53,8 +47,8 @@ const ContactUs = () => {
                 <SHide>
                     <SSocial variants={titleAnim}  >
                         <SCricle></SCricle>
-                        <SH2 onHoverStart={() => setSendN(true)} onHoverEnd={() => setSendN(false)}>
-                            Sund Us A <motion.span variants={SendMessegaAnim} initial="hidden" animate={ControlSendN} >Message</motion.span>
+                        <SH2>
+                            Sund Us A <motion.span variants={SendMessegaAnim} initial="hidden"  >Message</motion.span>
                         </SH2>
                     </SSocial>
                 </SHide>
